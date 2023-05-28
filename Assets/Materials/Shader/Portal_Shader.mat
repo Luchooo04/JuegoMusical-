@@ -64,15 +64,15 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Scale: 4
+    - _Scale: 5
     - _Speed: 0.5
     - _SrcBlend: 5
     - _Surface: 1
-    - _TwirlStrenght: 10
+    - _TwirlStrenght: 20
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _Color: {r: 54.382793, g: 3.0899315, b: 157.5865, a: 0}
+    - _Color: {r: 26.909441, g: 1.6308752, b: 77.87429, a: 0}
   m_BuildTextureStacks: []
