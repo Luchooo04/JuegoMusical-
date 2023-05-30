@@ -19,7 +19,7 @@ public class ApagarRadio : MonoBehaviour
         if (enter)
         {
 
-            GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height - 100, 150, 30), "Presiona 'F' para apagar");
+            GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height - 100, 150, 30), "Presiona 'F' para prender");
         }
     }
 

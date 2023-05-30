@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float walkSpeed = 2.5f;    
+    public float runSpeed = 5f;
     public float rotationSpeed = 100f;
+
+    private float currentSpeed;
 
 
     private Camera mainCamera;
@@ -23,8 +26,21 @@ public class Player : MonoBehaviour
         
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * moveSpeed * Time.deltaTime;
-        transform.Translate(movement);
+        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput);
+        //transform.Translate(movement);
+
+        // Verificar si el jugador está corriendo
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            currentSpeed = runSpeed;    // Establecer la velocidad de correr
+        }
+        else
+        {
+            currentSpeed = walkSpeed;   // Establecer la velocidad de caminar
+        }
+
+        // Mover al jugador en la dirección del movimiento con la velocidad actual
+        transform.Translate(movement * currentSpeed * Time.deltaTime);
 
         if (Input.GetButtonDown("Horizontal")) 
         {
@@ -60,6 +76,19 @@ public class Player : MonoBehaviour
             if (hActivo == false)
             {
                 pasos.Pause();
+            }
+        }
+       
+        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 2f))
+            {
+                if (hit.collider.CompareTag("Wall"))
+                {
+                    Destroy(hit.collider.gameObject); 
+                }
             }
         }
 
