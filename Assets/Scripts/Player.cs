@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             Cursor.lockState = CursorLockMode.None;
         }

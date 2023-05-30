@@ -12,6 +12,7 @@ public class ControlPuerta : MonoBehaviour
     private Vector3 defaultRot;
     private Vector3 openRot;
 
+    public GameObject Txt;
     public GameObject door;
     private AudioSource audioSource;
     public AudioClip closeDoorAudio;
@@ -60,20 +61,13 @@ public class ControlPuerta : MonoBehaviour
     }
 
     
-    private void OnGUI()
-    {
-        if (enter)
-        {
-           
-            GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height - 100, 150, 30), "Presiona 'E' para abrir");
-        }
-    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            
+            Txt.SetActive(true);
             enter = true;
         }
     }
@@ -83,7 +77,7 @@ public class ControlPuerta : MonoBehaviour
         
         if (other.gameObject.tag == "Player")
         {
-           
+            Txt.SetActive(false);  
             enter = false;
         }
     }
