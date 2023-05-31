@@ -41,7 +41,7 @@ public class ControlPuerta : MonoBehaviour
 
         
 
-        if (Input.GetKeyDown("e") && enter)
+        if (Input.GetKeyDown("f") && enter)
         {
             open = !open;
 

@@ -10,7 +10,7 @@ public class ApagarRadio : MonoBehaviour
     public AudioSource musica;
     void Update()
     {
-        if (Input.GetKeyDown("f")) 
+        if (Input.GetKeyDown("e")) 
         { 
          musica.Play();
         }
